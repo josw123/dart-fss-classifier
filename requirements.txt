@@ -1,0 +1,3 @@
+dart_fss>=0.2.0
+tensorflow
+konlpy

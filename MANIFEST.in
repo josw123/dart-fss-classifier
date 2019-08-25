@@ -1,0 +1,5 @@
+include versioneer.py
+include dart_fss_classifier/_version.py
+include dart_fss_classifier/data/dict.json
+include dart_fss_classifier/data/model.h5
+
