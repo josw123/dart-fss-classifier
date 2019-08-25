@@ -1,6 +1,6 @@
 # Dart-Fss-Classifier
 
-[Dart-Fss](https://github.com/josw123/dart-fss)의 재무제표 추출 성능향상을 위한 플러그인.
+[Dart-Fss](https://github.com/josw123/dart-fss)의 재무제표 추출 성능 향상을 위한 플러그인.
 
 자연어 처리를 이용하여 재무제표 계정과목의 Concept ID 추정함으로써 재무제표 추출 성능 향상. 
 
