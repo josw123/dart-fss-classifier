@@ -3,7 +3,7 @@ import math
 
 from pandas import DataFrame
 from typing import Tuple, List, Union
-from dart_fss.fs_search import find_all_columns, extract_account_title
+from dart_fss.fs.extract import find_all_columns, extract_account_title
 
 from dart_fss_classifier.classifier import guess
 
@@ -16,7 +16,7 @@ def attached_plugin():
         정상적으로 연결시 True / 오류 발생시 False
     """
     try:
-        from dart_fss.fs_search import additional_comparison_function
+        from dart_fss.fs.extract import additional_comparison_function
         additional_comparison_function.append(compare_df_and_ndf_cnn)
         return True
     except BaseException:

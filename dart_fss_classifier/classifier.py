@@ -7,9 +7,9 @@ import pkg_resources
 from typing import List
 from konlpy.tag import Kkma
 
-from dart_fss.reports import Report
-from dart_fss._utils import Singleton, create_folder, is_notebook
-from dart_fss.fs_search import analyze_xbrl, find_all_columns
+from dart_fss.filings.reports import Report
+from dart_fss.utils import Singleton, create_folder, is_notebook
+from dart_fss.fs.extract import analyze_xbrl, find_all_columns
 
 
 def guess(text):
@@ -68,13 +68,13 @@ def generate_default_dataset_and_cnn_model(reports_no: int = 25, units: int = 25
     batch_size: int
         batch_size 수
     """
-    from dart_fss.search import search_report
+    from dart_fss.filings import search
     from datetime import datetime
 
     now = datetime.now()
     end_dt = datetime(year=now.year, month=7, day=31).strftime('%Y%m%d')
     start_dt = datetime(year=now.year, month=5, day=1).strftime('%Y%m%d')
-    reports = search_report(start_dt=start_dt, end_dt=end_dt, bsn_tp='a001', page_set=reports_no)
+    reports = search(bgn_de=start_dt, end_de=end_dt,pblntf_detail_ty='a001', page_count=reports_no)
     generate_dataset_and_cnn_model(reports=reports, units=units, dropout=dropout, epochs=epochs, batch_size=batch_size)
 
 

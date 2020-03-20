@@ -6,7 +6,7 @@
 
 ## Dependencies
 
--   [Dart-Fss](https://github.com/josw123/dart-fss) >= 0.2.0
+-   [Dart-Fss](https://github.com/josw123/dart-fss) >= 0.3.0
 -   [TensorFlow](https://www.tensorflow.org)
 -   [KoNLPy](http://konlpy.org/en/latest/)
 
@@ -29,9 +29,9 @@ import dart_fss_classifier
 assert dart_fss_classifier.attached_plugin() == True
 
 # 회사리스트 불러오기
-crp_list = dart.get_crp_list()
+corp_list = dart.get_corp_list()
 # 삼성전자 선택
-samsung = crp_list.find_by_name('삼성전자')[0]
+samsung = corp_list.find_by_corp_name(corp_name='삼성전자', exactly=True)[0]
 # 재무제표 추출
-fs = samsung.get_financial_statement(start_dt='20100101')
+fs = samsung.extract_fs(bgn_de='20100101')
 ```
